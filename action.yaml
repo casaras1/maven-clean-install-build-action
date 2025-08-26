@@ -30,6 +30,9 @@ runs:
       if: ${{ inputs.skip_setup != 'true' && inputs.skip_setup != 'yes' }}
       uses: actions/checkout@v4
 
+    - name: Make mvnw executable
+      run: chmod +x ./mvnw
+        
     - name: Setup Java
       if: ${{ inputs.skip_setup != 'true' && inputs.skip_setup != 'yes' }}
       uses: actions/setup-java@v4
